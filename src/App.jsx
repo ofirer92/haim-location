@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
-  const phoneNumber = "+972543103280";
+  const phoneNumber = "+972526005714";
 
   const sendLocation = async () => {
     setIsLoading(true);
@@ -16,7 +16,7 @@ function App() {
       });
 
       const { latitude, longitude } = position.coords;
-      const message = `My current location: https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+      const message = `קבל מיקום: https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
       const url = `https://wa.me/${phoneNumber}/?text=${encodeURIComponent(message)}`;
 
       window.open(url, '_blank');
@@ -34,7 +34,7 @@ function App() {
         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-khhhc7dEp9FKVjvGVD4V8uMPPQbNhOF33g&s" alt="Avatar" />
       </div>
       <button onClick={sendLocation} disabled={isLoading}>
-        {isLoading ? 'Loading...' : 'Send Location'}
+        {isLoading ? 'Loading...' : 'שלח מיקום'}
       </button>
     </div>
   );
